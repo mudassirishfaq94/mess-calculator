@@ -1,0 +1,347 @@
+/* Mess Calculator Modern Responsive Styles */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap');
+
+:root {
+    --primary: #6a82fb;
+    --secondary: #fc5c7d;
+    --accent: #43e97b;
+    --bg-gradient: linear-gradient(135deg, #6a82fb 0%, #fc5c7d 100%);
+    --glass-bg: rgba(255,255,255,0.18);
+    --glass-border: rgba(255,255,255,0.35);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    --text-main: #232946;
+    --text-muted: #7c7c7c;
+    --success: #43e97b;
+    --danger: #fc5c7d;
+    --card-radius: 18px;
+    --transition: 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: var(--text-main);
+    padding: 0;
+    letter-spacing: 0.01em;
+}
+
+#logoutBtn{
+    color: #fceabb;
+    font-weight: bold;
+}
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 18px 18px 18px;
+}
+
+header h1 {
+    font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.2em;
+    text-shadow: 0 2px 8px rgba(106,130,251,0.08);
+}
+
+header .lead {
+    color: #fceabb;
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.card {
+    background: var(--glass-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow);
+    border: 1.5px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform var(--transition), box-shadow var(--transition);
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-4px) scale(1.012);
+    box-shadow: 0 12px 32px 0 rgba(31, 38, 135, 0.22);
+}
+
+.card-header {
+    background: transparent;
+    border-bottom: none;
+    border-radius: var(--card-radius) var(--card-radius) 0 0 !important;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #fceabb;
+    letter-spacing: 0.01em;
+    padding-bottom: 0.5rem;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-family: 'Montserrat', 'Inter', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.form-select, .form-control {
+    border-radius: 12px;
+    border: 1.5px solid #e3e8f7;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    box-shadow: none;
+    background: rgba(255,255,255,0.7);
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(106,130,251,0.13);
+    background-color: rgba(255,255,255,0.95);
+}
+
+.input-group-text {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0.6rem 1.2rem;
+    transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+    box-shadow: 0 2px 8px rgba(106,130,251,0.10);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(252,92,125,0.13);
+}
+
+.btn-outline-danger {
+    border: 1.5px solid var(--danger);
+    color: var(--danger);
+    background: transparent;
+    border-radius: 8px;
+    transition: background var(--transition), color var(--transition);
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:focus {
+    background: var(--danger);
+    color: #fff;
+}
+
+.list-group {
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.list-group-item {
+    background: rgba(255,255,255,0.85);
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--text-main);
+    font-size: 1.05rem;
+    transition: background var(--transition);
+    padding: 0.85rem 1.2rem;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item.text-muted {
+    background: transparent;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+#membersList, #transactionsList {
+    max-height: 320px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #f0f0f0;
+}
+
+#membersList::-webkit-scrollbar,
+#transactionsList::-webkit-scrollbar {
+    width: 7px;
+}
+#membersList::-webkit-scrollbar-thumb,
+#transactionsList::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 8px;
+}
+
+#membersList::-webkit-scrollbar-track,
+#transactionsList::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+/* Transaction Cards */
+#transactionsList .card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 14px;
+    border: 1px solid #e3e8f7;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 2px 8px rgba(67,233,123,0.07);
+    transition: box-shadow var(--transition), transform var(--transition);
+    overflow-x: hidden; 
+}
+
+#transactionsList .card:hover {
+    box-shadow: 0 6px 18px rgba(67,233,123,0.13);
+    transform: scale(1.015);
+}
+
+#transactionsList .fw-bold {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+#transactionsList small.text-muted {
+    color: var(--text-muted) !important;
+    font-size: 0.97rem;
+}
+
+#balancesList .alert-info {
+    background: linear-gradient(90deg, #e0e7ff 0%, #fceabb 100%);
+    color: var(--text-main);
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(67,233,123,0.07);
+}
+
+#balancesList .list-group-item {
+    background: rgba(255,255,255,0.92);
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    font-size: 1.08rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#balancesList .badge {
+    font-size: 1rem;
+    padding: 0.5em 1.1em;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+#balancesList .bg-success {
+    background: linear-gradient(90deg, var(--accent) 0%, #38f9d7 100%);
+    color: #fff;
+}
+
+#balancesList .bg-danger {
+    background: linear-gradient(90deg, var(--danger) 0%, #f7971e 100%);
+    color: #fff;
+}
+
+/* Auth Modal */
+#authModal .modal-content {
+    border-radius: 18px;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    border: 1.5px solid var(--glass-border);
+}
+
+#authModal .modal-header {
+    border-bottom: none;
+}
+
+#authModal .modal-footer {
+    border-top: none;
+}
+
+#authModal input.form-control {
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    border: 1.5px solid #e3e8f7;
+    font-size: 1rem;
+}
+
+#authModal .btn-primary {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        max-width: 98vw;
+        padding: 0 8px;
+    }
+    .row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.1rem;
+    }
+    .card {
+        margin-bottom: 1rem;
+    }
+    .container {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 2px;
+    }
+    .card {
+        border-radius: 12px;
+        padding: 0;
+    }
+    .card-header {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+    .form-control, .form-select {
+        font-size: 0.98rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.card, .list-group-item, .alert-info, #transactionsList .card {
+    animation: fadeInUp 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+/* Utility */
+.text-center { text-align: center; }
+.text-muted { color: var(--text-muted) !important; }
+.fw-bold { font-weight: 700 !important; }
